@@ -11,7 +11,8 @@ export type ReturnPromise<T> = Promise<AxiosResponse<TReturnData<T>>>;
 
 const request = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
-  timeout: 1000 * 60
+  timeout: 1000 * 60,
+  withCredentials: true //axios携带cookie
 });
 
 request.interceptors.request.use(

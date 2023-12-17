@@ -53,7 +53,8 @@ export default defineConfig(({ mode }) => {
       host: true,
       proxy: {
         "/proxyapi": {
-          target: `http://${APP_PROXY_HOST}`,
+          target: `http://localhost:3000/`,
+          changeOrigin: true,
           rewrite: (path) => path.replace("/proxyapi", "")
         }
       }
